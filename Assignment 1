@@ -1,0 +1,33 @@
+1.
+import tensorflow as tf
+a = tf.multiply(2, 2)
+b = tf.multiply(3, 3)
+c = tf.multiply(2, 2)
+b = tf.multiply(c, 3)
+e = tf.add(a, b,)
+f = tf.add(e, c,)
+g = tf.add(d, f,)
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output", sess.graph)
+    print(sess.run(g))
+    writer.close()
+
+
+2.
+import tensorflow as tf
+a  = tf.multiply(6, 6)
+a1 = tf.multiply(a, 6)
+b  = tf.multiply(3, 3)
+b1 = tf.multiply(b, 3)
+c  = tf.multiply(3, 6)
+c1 = tf.multiply(c, 3)
+d  = tf.subtract(6, 3,)
+e  = tf.multiply(c1, d)
+f  = tf.add(a1, b1,)
+g  = tf.add(a1, e)
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output1", sess.graph)
+    print(sess.run(g))
+    writer.close()
