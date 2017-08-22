@@ -1,0 +1,37 @@
+import tensorflow as tf
+import tensorflow as tf
+x= tf.constant([1.4,3.4, 3.6,], name='x')
+y = tf.constant([1.3,9.2,5.7], name='y')
+
+mean_x=tf.reduce_mean(x)
+mean_y=tf.reduce_mean(y)
+mean, variance = tf.nn.moments(x, [0])
+  
+x1=tf.subtract(x[0],mean_x)
+x2=tf.subtract(x[1],mean_x)
+x3=tf.subtract(x[2],mean_x)
+
+y1=tf.subtract(y[0],mean_y)
+y2=tf.subtract(y[1],mean_y)
+y3=tf.subtract(y[2],mean_y)
+
+
+c1=tf.multiply(x3,y3)
+c2=tf.multiply(x2,y2)
+c3=tf.multiply(x3,y3)
+
+co1=tf.add(x1,y1)
+c02=tf.add(x3,y3)
+
+cov=tf.divide(c02,covarience)
+
+
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output1", sess.graph)
+    print(sess.run(mean_x))
+    print(sess.run(mean_y))
+    m, v = sess.run([mean, variance])
+    print(m, v)
+    print(sess.run(s))
+    writer.close()
